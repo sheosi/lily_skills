@@ -1,0 +1,10 @@
+weather_now:
+  samples: "cuál es el tiempo en ($city_name)"
+  entities:
+    city_name:
+      kind:
+        data:
+          - valencia
+          - carcagente
+
+  action: weather

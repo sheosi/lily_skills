@@ -1,0 +1,27 @@
+toggle:
+    samples: "Alterna ($device_name)"
+    slots:
+        device_name:
+            type:
+                data:
+                    - luces
+    action: default_action
+
+turn_on:
+    samples: "Enciende ($device_name)"
+    slots:
+        device_name:
+            type:
+                data:
+                    - luces
+    action: default_action
+
+
+turn_on:
+    samples: "Enciende ($device_name)"
+    slots:
+        device_name:
+            type:
+                data:
+                    - luces
+    action: default_action

@@ -1,0 +1,15 @@
+play_track:
+  samples: "pon la canción  ($track_name)"
+  slots:
+    track_name:
+      type:
+        data:
+          - tusa
+          - one room disco
+
+  action: spotify
+  
+    
+stop_track:
+  samples: "para la música"
+  action: spotify

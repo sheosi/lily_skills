@@ -1,0 +1,1 @@
+weather_now_success = En el cielo hay {$weather_desc}, con temperaturas mínimas de {$min_temp} grados y máximas de {$max_temp}
