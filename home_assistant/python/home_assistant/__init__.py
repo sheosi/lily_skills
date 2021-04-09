@@ -16,9 +16,9 @@ class HomeAssistant:
         names = {value:key for key, value in entities.items()}
         print(names)
 
-        entity = names[context["device_friendly_name"]]
+        entity = names[context["intent"]["slots"]["device_friendly_name"]]
 
-        HomeAssistant.__call_service("homeassistant",context["intent"], entity_id=entity)
+        HomeAssistant.__call_service("homeassistant",context["intent"]["name"], entity_id=entity)
         return answer("Operación completada", context)
 
     @staticmethod

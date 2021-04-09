@@ -37,10 +37,11 @@ class Spotify:
         return None
 
     def trigger_action(self, context):
-        if context["intent"] == "play_track":
+        action = context["intent"]["name"]
+        if action == "play_track":
             dev = self.get_dev()
             if not dev is None:
-                str_input = context["track_name"]
+                str_input = context["intent"]["slots"]["track_name"]
                 search_res = self.sp.search(str_input, limit=1, offset=0, type='track', market=None)["tracks"]["items"]
                 if search_res:
                     track_uri = search_res[0]["uri"]
@@ -52,7 +53,7 @@ class Spotify:
             else:
                 return answer(translate("on_no_dev", context), context)
         
-        if context["intent"] == "stop_track":
+        if action == "stop_track":
             dev = self.get_dev()
             if not dev is None:
                 self.sp.pause_playback(device_id=dev)
@@ -60,7 +61,7 @@ class Spotify:
             else:
                 return answer(translate("on_no_dev", context), context)
         
-        if context["intent"] == "lower_volume":
+        if action == "lower_volume":
             dev = self.get_dev()
             if not dev is None:
                 self.sp.pause_playback(device_id=dev)
